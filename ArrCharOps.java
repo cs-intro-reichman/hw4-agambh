@@ -22,6 +22,9 @@ public class ArrCharOps {
         System.out.println(compareTo("Zoo", "zoo"));
         System.out.println(hashCode(arr1));
         System.out.println(hashCode(arr2));
+
+        char [] arr3={'h','a','m','b','u','r','g','e','r'};
+        System.out.println(subArray(arr3, 4, 8));
     }
 
     /** Prints the given array of characters, and moves the cursor to the next line.
@@ -50,6 +53,7 @@ public class ArrCharOps {
                     return false;
                 }
             }
+            return true ;
         }
         return false;
     }
@@ -93,13 +97,12 @@ public class ArrCharOps {
     */
     public static char[] concat(char[] arr1, char[] arr2) {
         char [] arr3 =new char [arr1.length + arr2.length];
-        for(int i = 0 ; i < arr3.length ; i++){
-            if ( i <  arr1.length ) {
-                arr3[i] = arr1[i];
-            } else {
-                arr3[i] = arr2[i-arr1.length];
-            }
-            
+        int place = 0;
+        for(int i = 0 ; i < arr1.length ; i++){
+           arr3[i] = arr1[i] ; 
+        }
+        for(int j = arr1.length ; j < arr3.length ; j++){
+            arr3[j] = arr2[place] ;
         }
         return arr3;
     }
@@ -112,7 +115,7 @@ public class ArrCharOps {
     public static char[] subArray(char[] arr, int beginIndex, int endIndex) {
         char [] subArray = new char [ endIndex - beginIndex ];
         int mone = 0 ;
-        for( int i = beginIndex ; i<endIndex ; i++){
+        for( int i = beginIndex ; i < endIndex ; i++){
             subArray[ mone ] = arr[i];
             mone ++ ;
         }
@@ -164,6 +167,12 @@ public class ArrCharOps {
         int lex2 = 0 ;
         int minlstr = Math.min(str1.length() , str2.length()) ; 
         for( int i = 0 ; i < minlstr ; i++ ){
+            if(str1.charAt(i) > 122 || (str1.charAt(i) <97 && str1.charAt(i) > 90) || str1.charAt(i) < 65){
+                return -2 ;
+            }
+            if(str2.charAt(i) > 122 || (str2.charAt(i) <97 && str2.charAt(i) > 90) || str2.charAt(i) < 65){
+                return -2 ;
+            }
             if(str1.charAt(i) < str2.charAt(i)){
                 lex1 ++ ;
             } else if(str1.charAt(i) > str2.charAt(i)){
