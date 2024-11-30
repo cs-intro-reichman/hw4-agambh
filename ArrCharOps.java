@@ -23,8 +23,9 @@ public class ArrCharOps {
         System.out.println(hashCode(arr1));
         System.out.println(hashCode(arr2));
 
-        char [] arr3={'h','a','m','b','u','r','g','e','r'};
-        System.out.println(subArray(arr3, 4, 8));
+        char [] arr3={'h','a','m'};
+        char [] arr4={'h','a','m'};
+        System.out.println(concat(arr3, arr4));
     }
 
     /** Prints the given array of characters, and moves the cursor to the next line.
@@ -103,6 +104,7 @@ public class ArrCharOps {
         }
         for(int j = arr1.length ; j < arr3.length ; j++){
             arr3[j] = arr2[place] ;
+            place ++ ;
         }
         return arr3;
     }
@@ -166,6 +168,9 @@ public class ArrCharOps {
         int lex1 = 0 ;
         int lex2 = 0 ;
         int minlstr = Math.min(str1.length() , str2.length()) ; 
+        if(str1 == "" || str2 == ""){
+            return -2 ;
+        }
         for( int i = 0 ; i < minlstr ; i++ ){
             if(str1.charAt(i) > 122 || (str1.charAt(i) <97 && str1.charAt(i) > 90) || str1.charAt(i) < 65){
                 return -2 ;
