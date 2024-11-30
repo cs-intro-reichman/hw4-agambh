@@ -172,12 +172,6 @@ public class ArrCharOps {
             return -2 ;
         }
         for( int i = 0 ; i < minlstr ; i++ ){
-            if(str1.charAt(i) > 122 || (str1.charAt(i) <97 && str1.charAt(i) > 90) || str1.charAt(i) < 65){
-                return -2 ;
-            }
-            if(str2.charAt(i) > 122 || (str2.charAt(i) <97 && str2.charAt(i) > 90) || str2.charAt(i) < 65){
-                return -2 ;
-            }
             if(str1.charAt(i) < str2.charAt(i)){
                 lex1 ++ ;
             } else if(str1.charAt(i) > str2.charAt(i)){
