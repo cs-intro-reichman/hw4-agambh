@@ -22,7 +22,7 @@ public class MyString {
         String lowercase = "" ;
         for(int i = 0 ; i < str.length() ; i++ ){
             if( str.charAt(i) > 64 && str.charAt(i) < 91){
-                lowercase += ( (char) (str.charAt(i) + 32) ) ;
+                lowercase += ( (char) ( str.charAt(i) + 32 ) ) ;
             } else{
                 lowercase += str.charAt(i) ;
             }
@@ -36,18 +36,18 @@ public class MyString {
         for( int i = 0 ; i < str1.length() ; i++){
             contains = true ;
             for(int j = 0 ; j < str2.length() ; j++){
-                if((i+str2.length()-1) >= str1.length()){
+                if( ( i + str2.length() - 1 ) >= str1.length() ){
                     return false;
                 }
-                if(str1.charAt(i+j) != str2.charAt(j)){
+                if( str1.charAt( i + j ) != str2.charAt(j) ){
                     contains = false ; 
-                    break;
+                    break ;
                 }
             }
-            if(contains){
-                return true;
+            if( contains ){
+                return true ;
             }
         }
-        return contains;
+        return contains ;
     }
 }
